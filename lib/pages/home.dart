@@ -20,14 +20,45 @@ class HomePage extends StatelessWidget {
         backgroundColor: Colors.white,
         elevation: 0.0,
         centerTitle: true,
-        leading: Container(
-          margin: EdgeInsets.all(10),
-          decoration: BoxDecoration(
-            color: Color(0xffF7F8F8),
-            borderRadius: BorderRadius.circular(10)
+        leading: GestureDetector(
+          onTap: () {
+
+          },
+          child: Container(
+            margin: EdgeInsets.all(10),
+            alignment: Alignment.center,
+            decoration: BoxDecoration(
+              color: Color(0xffF7F8F8),
+              borderRadius: BorderRadius.circular(10)
+            ),
+            child: SvgPicture.asset(
+              'assets/icons/arrow_left.svg',
+              height: 20,
+              width: 20,
+            ),
           ),
-          child: SvgPicture.asset('assets/icons/arrow_left.svg'),
         ),
+        actions: [
+          GestureDetector(
+            onTap: () {
+
+            },
+            child: Container(
+              margin: EdgeInsets.all(10),
+              width: 37,
+              alignment: Alignment.center,
+              decoration: BoxDecoration(
+                color: Colors.white,
+                borderRadius: BorderRadius.circular(10)
+              ),
+              child: SvgPicture.asset(
+                'assets/icons/notification.svg',
+                height: 20,
+                width: 20,
+              ),
+            ),
+          )
+        ],
       ),
     );
   }
