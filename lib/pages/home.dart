@@ -9,6 +9,32 @@ class HomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: appBar(),
+      backgroundColor: Colors.white,
+      body: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Padding(
+            padding: EdgeInsets.only(top: 40, left: 20),
+            child: Text(
+              'Trending Events',
+              style: TextStyle(
+                fontSize: 14, 
+                color: Colors.black,
+                fontWeight: FontWeight.w600),
+            )
+          ),
+          SizedBox(height: 16),
+          Container(
+            height: 150,
+            color: Colors.green,
+            child: ListView.builder(
+              itemBuilder: (context, index) {
+                return Text('text');
+              },
+            )
+          ),
+        ],
+      ),
     );
   }
 
