@@ -1,12 +1,26 @@
+import 'package:event_app/models/events_model.dart';
 import 'package:flutter/material.dart';
 // ignore: depend_on_referenced_packages
 import 'package:flutter_svg/flutter_svg.dart';
 
-class HomePage extends StatelessWidget {
+class HomePage extends StatefulWidget {
   HomePage({super.key});
 
   @override
+  State<HomePage> createState() => _HomePageState();
+}
+
+class _HomePageState extends State<HomePage> {
+  List<EventsModel> events = [];
+
+  void _getEvents() {
+    events = EventsModel.getEvents();
+  }
+
+  @override
   Widget build(BuildContext context) {
+    _getEvents();
+
     return Scaffold(
       appBar: appBar(),
       backgroundColor: Colors.white,
@@ -25,11 +39,37 @@ class HomePage extends StatelessWidget {
           ),
           SizedBox(height: 16),
           Container(
-            height: 150,
-            color: Colors.green,
-            child: ListView.builder(
+            height: 186,
+            child: ListView.separated(
+              itemCount: events.length,
+              scrollDirection: Axis.horizontal,
+              padding: EdgeInsets.only(
+                left: 20,
+                right: 20,
+              ),
+              separatorBuilder: (context, index) => SizedBox(width: 25,),
               itemBuilder: (context, index) {
-                return Text('text');
+                return Container(
+                  width: 346,
+                  decoration: BoxDecoration(
+                    color: events[index].colorBox,
+                    borderRadius: BorderRadius.circular(12),
+                  ), 
+                  // child: SvgPicture.asset(
+                  //   events[index].eventImgPath,
+                  //   height: 186,
+                  //   width: 346,
+                  // )
+                  // child: ClipRRect(
+                  //   borderRadius: BorderRadius.circular(12),
+                  //   child: Image.asset(
+                  //     events[index].eventImgPath,
+                  //     fit: BoxFit.cover,
+                  //     height: 186,
+                  //     width: 346,
+                  //   ),
+                  // ),
+                );
               },
             )
           ),
