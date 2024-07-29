@@ -26,7 +26,7 @@ class EventsModel {
         location: "Location 1",
         date: "2020-01-01",
         price: "100",
-        eventImgPath: "D:/event_app/assets/images/ex_event.png",
+        eventImgPath: "assets/images/ex_event.png",
         colorBox: Colors.blue,
       )
     );
