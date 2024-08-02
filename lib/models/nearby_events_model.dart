@@ -1,6 +1,6 @@
 import "package:flutter/material.dart";
 
-class EventsModel {
+class NearbyEvents {
   String eventName;
   String location;
   String date;
@@ -8,7 +8,7 @@ class EventsModel {
   String eventImgPath;
   Color colorBox;
 
-  EventsModel({
+  NearbyEvents({
     required this.eventName,
     required this.location,
     required this.date,
@@ -17,11 +17,11 @@ class EventsModel {
     required this.colorBox,
   });
 
-  static List<EventsModel> getEvents() {
-    List<EventsModel> events = [];
+  static List<NearbyEvents> getEvents() {
+    List<NearbyEvents> nearbyEvents = [];
 
-    events.add(
-      EventsModel(
+    nearbyEvents.add(
+      NearbyEvents(
         eventName: "Event 1",
         location: "Location 1",
         date: "2020-01-01",
@@ -30,8 +30,8 @@ class EventsModel {
         colorBox: Colors.blue,
       )
     );
-    events.add(
-      EventsModel(
+    nearbyEvents.add(
+      NearbyEvents(
         eventName: "Event 2",
         location: "Location 2",
         date: "2020-01-01",
@@ -40,8 +40,8 @@ class EventsModel {
         colorBox: Colors.yellow,
       )
     );
-    events.add(
-      EventsModel(
+    nearbyEvents.add(
+      NearbyEvents(
         eventName: "Event 3",
         location: "Location 3",
         date: "2020-01-01",
@@ -50,8 +50,8 @@ class EventsModel {
         colorBox: Colors.pink,
       )
     );
-    events.add(
-      EventsModel(
+    nearbyEvents.add(
+      NearbyEvents(
         eventName: "Event 4",
         location: "Location 4",
         date: "2020-01-01",
@@ -61,8 +61,8 @@ class EventsModel {
       )
     );
 
-    events.add(
-      EventsModel(
+    nearbyEvents.add(
+      NearbyEvents(
         eventName: "Event 5",
         location: "Location 5",
         date: "2020-01-01",
@@ -72,6 +72,6 @@ class EventsModel {
       )
     );
 
-    return events;
+    return nearbyEvents;
   }
 }
