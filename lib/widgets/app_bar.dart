@@ -1,10 +1,18 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:flutter/services.dart';
 
 class CommonAppBar extends StatelessWidget implements PreferredSizeWidget{
   final String title;
+  final Color backgroundColor;
+  final ColorFilter colorFilterIcon;
   
-  CommonAppBar({super.key, this.title = ''});
+  CommonAppBar({
+    super.key, 
+    this.title = '', 
+    this.backgroundColor = Colors.white,
+    this.colorFilterIcon = const ColorFilter.mode(Colors.black, BlendMode.srcIn),
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -17,7 +25,15 @@ class CommonAppBar extends StatelessWidget implements PreferredSizeWidget{
           fontWeight: FontWeight.bold,
         ),
       ),
-      backgroundColor: Colors.white,
+      // backgroundColor: Colors.white,
+      backgroundColor: backgroundColor,
+      systemOverlayStyle: SystemUiOverlayStyle(
+        statusBarColor: Color(0xffff8a22),
+
+        // Status bar brightness (optional)
+        statusBarIconBrightness: Brightness.light, // For Android (dark icons)
+        statusBarBrightness: Brightness.light, // For iOS (light icons)
+      ),
       elevation: 0.0,
       centerTitle: false,
       // titleSpacing: 10.0,
@@ -50,13 +66,14 @@ class CommonAppBar extends StatelessWidget implements PreferredSizeWidget{
             width: 37,
             alignment: Alignment.center,
             decoration: BoxDecoration(
-              color: Colors.white,
+              color: Colors.white.withOpacity(0.2),
               borderRadius: BorderRadius.circular(10)
             ),
             child: SvgPicture.asset(
               'assets/icons/Bell_light.svg',
               height: 20,
               width: 20,
+              colorFilter: colorFilterIcon,
             ),
           ),
         )
