@@ -47,6 +47,7 @@ class EventDetail extends StatelessWidget {
               fontSize: 12,
             ),
             maxLines: 6,
+            textAlign: TextAlign.justify
           ),
           Text(
             'Read More',
