@@ -6,12 +6,14 @@ class CommonAppBar extends StatelessWidget implements PreferredSizeWidget{
   final String title;
   final Color backgroundColor;
   final ColorFilter colorFilterIcon;
+  final bool showLeading;
   
   CommonAppBar({
     super.key, 
     this.title = '', 
     this.backgroundColor = Colors.white,
     this.colorFilterIcon = const ColorFilter.mode(Colors.black, BlendMode.srcIn),
+    this.showLeading = false
   });
 
   @override
@@ -38,24 +40,26 @@ class CommonAppBar extends StatelessWidget implements PreferredSizeWidget{
       centerTitle: false,
       // titleSpacing: 10.0,
       
-      // leading: GestureDetector(
-      //   onTap: () {
+      leading: showLeading
+        ?GestureDetector(
+          onTap: () {
 
-      //   },
-      //   child: Container(
-      //     margin: EdgeInsets.all(10),
-      //     alignment: Alignment.center,
-      //     decoration: BoxDecoration(
-      //       color: Color(0xffF7F8F8),
-      //       borderRadius: BorderRadius.circular(10)
-      //     ),
-      //     child: SvgPicture.asset(
-      //       'assets/icons/arrow_left.svg',
-      //       height: 20,
-      //       width: 20,
-      //     ),
-      //   ),
-      // ),
+          },
+          child: Container(
+            margin: EdgeInsets.all(10),
+            alignment: Alignment.center,
+            decoration: BoxDecoration(
+              color: Colors.white.withOpacity(0.2),
+              borderRadius: BorderRadius.circular(10)
+            ),
+            child: SvgPicture.asset(
+              'assets/icons/Expand_left_light.svg',
+              height: 20,
+              width: 20,
+              colorFilter: colorFilterIcon,
+            ),
+          ),
+        ):null,
       actions: [
         GestureDetector(
           onTap: () {

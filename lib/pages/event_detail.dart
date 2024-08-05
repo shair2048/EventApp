@@ -11,6 +11,7 @@ class EventDetail extends StatelessWidget {
       appBar: CommonAppBar(
         backgroundColor: Colors.transparent, 
         colorFilterIcon: ColorFilter.mode(Colors.white, BlendMode.srcIn),
+        showLeading: true,
       ),
       extendBodyBehindAppBar: true,
       backgroundColor: Colors.white,
