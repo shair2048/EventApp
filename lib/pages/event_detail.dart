@@ -17,10 +17,47 @@ class EventDetail extends StatelessWidget {
       backgroundColor: Colors.white,
       body: Column(
         children: [
-          _eventLabel()
+          _eventLabel(),
+          SizedBox(height: 28),
+          _eventDescription(),
+          SizedBox(height: 28)
         ]
       ),
+    );
+  }
 
+  Container _eventDescription() {
+    return Container(
+      padding: EdgeInsets.symmetric(horizontal: 22),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Text(
+            'Description',
+            style: TextStyle(
+              fontWeight: FontWeight.w500,
+              fontSize: 14,
+            ),
+          ),
+          SizedBox(height: 8),
+          Text(
+            'Integer id augue iaculis, iaculis orci ut, blandit quam. Donec in elit auctor, finibus quam in, phar. Proin id ligula dictum, covalis enim ut, facilisis massa. Mauris a nisi ut sapien blandit imperdi. Interdum et malesuada fames ac ante ipsum primis in faucibs. Sed posuere egestas nunc ut tempus. Fu ipsum dolor sit amet.',
+            style: TextStyle(
+              fontWeight: FontWeight.w400,
+              fontSize: 12,
+            ),
+            maxLines: 6,
+          ),
+          Text(
+            'Read More',
+            style: TextStyle(
+              fontWeight: FontWeight.w500,
+              fontSize: 12,
+              color: Color(0xff0092FC)
+            ),
+          ),
+        ]
+      ),
     );
   }
 
