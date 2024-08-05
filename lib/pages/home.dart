@@ -1,6 +1,7 @@
 import 'package:event_app/models/events_model.dart';
 import 'package:event_app/models/nearby_events_model.dart';
 import 'package:event_app/widgets/app_bar.dart';
+import 'package:event_app/widgets/navigation_bar.dart';
 import 'package:flutter/material.dart';
 // ignore: depend_on_referenced_packages
 import 'package:flutter_svg/flutter_svg.dart';
@@ -40,9 +41,10 @@ class _HomePageState extends State<HomePage> {
           _popularEvents(),
           SizedBox(height: 40),
           // _upcomingEvents(),
-          _nearbyEvents()
+          _nearbyEvents(),
         ],
       ),
+      bottomNavigationBar: CommonNavigationBar(),
     );
   }
 
