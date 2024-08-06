@@ -1,5 +1,6 @@
 import 'package:event_app/pages/event_detail.dart';
 import 'package:event_app/pages/home.dart';
+import 'package:event_app/pages/search.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -15,7 +16,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       theme: ThemeData(fontFamily: 'Poppins'),
-      home: HomePage()
+      home: SearchPage()
     );
   }
 }
