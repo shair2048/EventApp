@@ -35,15 +35,93 @@ class _HomePageState extends State<HomePage> {
     return Scaffold(
       appBar: CommonAppBar(title: 'EventApp',),
       backgroundColor: Colors.white,
-      body: Column(
-        // crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          _popularEvents(),
-          SizedBox(height: 40),
-          // _upcomingEvents(),
-          _nearbyEvents(),
-        ],
+      body: SingleChildScrollView(
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            _popularEvents(),
+            SizedBox(height: 40),
+            _nearbyEvents(),
+            SizedBox(height: 40),
+            Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Padding(
+                  padding: EdgeInsets.only(left: 20),
+                  child: Text(
+                    'Online Events',
+                    style: TextStyle(
+                      fontSize: 14, 
+                      fontWeight: FontWeight.w600
+                    ),
+                  )
+                ),
+                SizedBox(height: 16),
+                Container(
+                  margin: EdgeInsets.symmetric(horizontal: 20),
+                  height: 100,
+                  color: Colors.white,
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Expanded(
+                        flex: 2,
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            Text(
+                              '17 Iconic Movies That Got Surprisingly Low Ratings', 
+                              style: TextStyle(
+                                fontSize: 10,
+                                fontWeight: FontWeight.w600
+                              ),
+                              overflow: TextOverflow.ellipsis,
+                              maxLines: 1,
+                            ),
+                            SizedBox(height: 8),
+                            Text(
+                              'Event 1', 
+                              style: TextStyle(
+                                fontSize: 10,
+                                fontWeight: FontWeight.w400
+                              ),
+                              overflow: TextOverflow.ellipsis,
+                              maxLines: 1,
+                            ),
+                            SizedBox(height: 8),
+                            Text(
+                              'Event 1', 
+                              style: TextStyle(
+                                fontSize: 10,
+                                fontWeight: FontWeight.w400
+                              ),
+                              overflow: TextOverflow.ellipsis,
+                              maxLines: 1,
+                            ),
+                          ]
+                        ),
+                      ),
+                      SizedBox(width: 20),
+                      ClipRRect(
+                        borderRadius: BorderRadius.circular(6),
+                        child: Image.asset(
+                          'assets/images/foster-lake.png',
+                          height: 100,
+                          width: 100,
+                          fit: BoxFit.cover,
+                        ),
+                      )
+                    ]
+                  ),
+                )
+              ]
+            ),
+            SizedBox(height: 40)
+          ],
+        ),
       ),
+      
       bottomNavigationBar: CommonNavigationBar(),
     );
   }
